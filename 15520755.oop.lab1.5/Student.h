@@ -1,5 +1,6 @@
 #pragma once
 #include <iostream>
+#include <string>
 using namespace std;
 class Student
 {
@@ -11,15 +12,16 @@ private:
 public:
 	Student();
 	~Student();
-	int nhapS();
+	Student(string, float, float, float);
+//	int nhapS();
 	int gpaS();
-	int xuatS();
+//	int xuatS();
+	friend istream& operator>>(istream &, Student &);
+	friend ostream& operator<<(ostream &, Student &);
 	//khai bao lop Student
 	//tu khoa trung tam "operator="
 	//const khong thay doi tham chieu dau vao
 //	Student& operator=(const Student &);
-	Student(string,float,float,float);
-//	friend istream& operator>>(istream &, Student &);
-//	friend ostream& operator<<(ostream &, Student &);
+
 };
 
