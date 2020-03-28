@@ -17,45 +17,45 @@ Student::~Student()
 {
 }
 ;
-//void Student::nhapS(string& nS, float& mS, float& lS)
+/*
 int Student::nhapS()
 {
-//	cout << "nhap ho&ten: ";
-//	getline(cin,sName);
-	cout << "nhap diem toan: ";
+	cout << "Nhap ho&ten hoc sinh: ";
+	getline(cin,sName);
+	cout << "Nhap diem Toan: ";
 	cin >> fMath;
-	cout << "nhap diem van: ";
+	cout << "Nhap diem Van: ";
 	cin >> fLiter;
-	return 0;
-};
-int Student::gpaS() 
-{
-	fGpa = (fMath + fLiter) / 2;
 	return 0;
 };
 int Student::xuatS() 
 {
-//	cout << "Sinh vien: " << sName;
-	cout << "co diem trung binh" << fGpa;
+	cout << "Sinh vien: " << sName;
+	cout << " co diem trung binh: " << fGpa;
 	return 0;
 };
-/*
+*/
+int Student::gpaS()
+{
+	fGpa = (fMath + fLiter) / 2;
+	return fGpa;
+};
 istream& operator>>(istream &is, Student &x)
 {
-	cout << "Nhap ten va diem Toan, Van sv:" << endl;
-	is >> x.sName;
+	cout << "Nhap ten cua hoc sinh: ";
+	getline(is, x.sName);
+	cout << "Nhap diem Toan hoc sinh: ";
 	is >> x.fMath;
+	cout << "Nhap diem Van hoc sinh: ";
 	is >> x.fLiter;
-	is >> x.fGpa;
 	return is;
 };
 ostream& operator<<(ostream &os, Student &y)
 {
-	cout << "Date: ";
-	os << "Sinh vien: " << y.sName << " co GPA = " << y.fGpa;
+	os << "Hoc sinh " << y.sName << " co GPA = " << y.fGpa;
 	return os;
 };
-*/
+
 //ten lop Student
 // :: toan tu gan
 //
@@ -67,13 +67,12 @@ Student& Student::operator=(const Student&x)
 	fLiter	= x.fLiter;
 	fGpa	= x.fGpa;
 	return *this;		//*this la ??
-	//toan tu gan operator= duoc cai-dat ben trong class "Student" nhu phuong thuc cua class
-	/*> Mien-gia-tri cua mot bien-con-tro la dia-chi o-nho <*/
-	/*> Ben trong than cua mot phuong-thuc, this la mot con-tro doi-tuong 
-	thuoc ve lop ma phuong-thuc do thuoc ve <*/
-	/*> Ben trong than cua mot lop (class), this la mot con-tro doi-tuong
-	GIU~ dia-chi cua lop doi-tuong dang goi thuc hien phuong-thuc <*/
-	/*> Hon nua, *this chinh la doi-tuong dang goi thuc hien phuong-thuc <*/
-/*
+	//	toan tu gan operator= duoc cai-dat ben trong class "Student" nhu phuong thuc cua class
+	//	Mien-gia-tri cua mot bien-con-tro la dia-chi o-nho
+	//	Ben trong than cua mot phuong-thuc, this la mot con-tro doi-tuong 
+	//	thuoc ve lop ma phuong-thuc do thuoc ve
+	//	Ben trong than cua mot lop (class), this la mot con-tro doi-tuong
+	//	GIU~ dia-chi cua lop doi-tuong dang goi thuc hien phuong-thuc
+	//	Hon nua, *this chinh la doi-tuong dang goi thuc hien phuong-thuc
 };
 */
